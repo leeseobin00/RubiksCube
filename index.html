@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title> Rubik's Cube </title>
+		
+        <style>
+            body {
+                background-color: #000000;
+                color: #eaeef1;
+            }
+			
+            #title {
+                text-align: center;
+                margin-top: 40px;
+                color: #ffd400;
+                font-size: 4em;
+                width: 100%;
+            }
+            
+            #cubeImage {
+                text-align: center;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                width: 100%;
+            }
+
+            #button {
+                text-align: center;
+                margin-top: 40px;
+                width: 100%;
+            }
+
+            .button {
+                background-color: rgb(122, 241, 92);
+                border: none;
+                color: black;
+                font-family: "bing";
+                font-size: 30px;
+                padding: 20px 60px;
+                text-align: center;
+                text-decoration: none;
+                margin-left: 16px;
+                margin-right: 16px;
+                cursor: pointer;
+            }
+
+            .button:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+            .button:hover {background-color: tomato}
+
+        </style>
+    </head>
+
+	<body>
+        <div id = "title"> <span> Rubik's Cube </span> </div>
+        <div id = "cubeImage"> <img src="image/rubik.png" width = "250px" height = "250px"> </div>
+      
+		<div id = "button">
+            <input type = "button" value= "GAME START" class = "button" onClick="location.href='game.html'"></button>
+            <input type = "button" value = "Tutorial" class = "button" onClick="location.href='tutorial.html'"></button>
+        </div>       
+    </body>
+</html>

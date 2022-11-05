@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Rubik's Cube Tutorial</title>
+		
+        <style>
+            body {
+                background-color: #000000;
+            }
+			
+            .buttonTitle {
+                width: 100%;
+                height: 30px;
+                margin-bottom: 16px;
+            }
+
+            .leftButton {
+                width: 50%;
+                float: left;
+                text-align: right;
+                background: #000000;
+            }
+
+            .rightButton {
+                width: 50%;
+                float: right;
+                background: #000000;
+            }
+
+            .button {
+                background-color: rgb(122, 241, 92);
+                border: none;
+                color: black;
+                font-family: "bing";
+                font-size: 30px;
+                padding: 0px 50px;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .button:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+            .button:hover {background-color: tomato}
+
+            #title {
+                color: #000000;
+                font-size: 3.3em;
+                width: 100%;
+                text-align: "center";
+            }
+
+            table {
+                width: 100%;
+                height: 400px;
+                text-align: "center";
+                margin-top: 20px;
+                display: inline;
+            }
+
+            #th {
+                color: #ffd400;
+                font-size: 1.5em;
+            }
+
+            th {
+                border: 2px solid #000000;
+                background-color: #000000;
+            }
+
+            td {
+                text-align: "left";
+                padding: 10px 10px;
+            }
+
+            th, tr {
+                color: #ffffff;
+            }
+
+        </style>
+    </head>
+
+	<body>
+        <div id = "title" style = "text-align: center; color: #ffd400;"> <span>Tutorial</span> </div>
+
+        <div style = "width: 100%; margin-top: 15px;">
+            <div style = "width: 50%; float:left; text-align: center; margin-bottom: 8px;">
+                <table width="50%">
+                    <th colspan = "2">
+                        <div id = "th"> <span>INTRODUCTION</span> </div>
+                    </th>
+                    <tr>
+                        <td><img type = "itemImage" src = "image/rotate.png" width = "100" height = "100"></td>
+                        <td align=left style = "font-family: bing">Cube rotation<br><br>Right-click and turn to turn around the viewing point.</td>
+                    </tr>
+                    <tr>
+                        <td><img id = "itemImage" src = "image/move.png" width = "100" height = "100"></td>
+                        <td align=left style = "font-family: bing">Rotation one side of the cube<br><br>Click a cube slice, and then click the cube slice in the direction you want it to rotate.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style = "width: 50%; float:left; text-align: center; margin-bottom: 8px;">
+                <table>
+                    <th colspan = "2">
+                        <div id = "th"> <span>BUTTON</span> </div>
+                    </th>
+                    <tr>
+                        <td><img type = "itemImage" src = "image/download.png" width = "60" height = "60"></td>
+                        <td align=left width = "100%" style = "font-family: bing">Save<br>
+Save all actions you have executed</td>
+                    </tr>
+                    <tr>
+                        <td><img id = "itemImage" src = "image/loading.png" width = "60" height = "60"></td>
+                        <td align=left style = "font-family: bing">Load<br>
+Execute the actions that have been executed so far</td>
+                    </tr>
+                    <tr>
+                        <td><img id = "itemImage" src = "image/reset.png" width = "60" height = "60"></td>
+                        <td align=left style = "font-family: bing">Reset<br>
+Returned to Cube for the first time</td>
+                    </tr>
+                    <tr>
+                        <td><img id = "itemImage" src = "image/suffle.png" width = "60" height = "60"></td>
+                        <td align=left style = "font-family: bing">Suffle<br>
+Rotate the cube as many times as you want</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class = "buttonTitle">
+            <div class = "leftButton">
+                <input type = "button" value= "Back" class = "button" style = "font-size: 2em" onClick="location.href='index.html'"></button>
+            </div>
+            <div class = "rightButton">
+                <input type = "button" value = "Start" class = "button" style = "font-size: 2em" onClick="location.href='game.html'"></button>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+attribute vec4 vColor;
+varying vec4 fColor;
+
+uniform mat4 modelViewMatrix;
+uniform mat4 projectionMatrix;
+
+void main() {
+    gl_Position = projectionMatrix * modelViewMatrix * vPosition;
+    fColor = vColor;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+varying vec4 fColor;
+
+void main() {
+    gl_FragColor = fColor;
+}
+</script>
+
+<head>
+    <title> Rubik's Cube </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
+    <script type="text/javascript" src="Common/webgl-utils.js"></script>
+    <script type="text/javascript" src="Common/initShaders.js"></script>
+    <script type="text/javascript" src="Common/MV.js"></script>
+    <script type="text/javascript" src="Colors.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+	
+</head>
+<body>
+<div id = "title" style = "text-align: center; color: #ffd400;"> <span>Rubik's Cube</span> </div>
+
+<div class="wrapper-ver">
+    <div class="wrapper">
+        <div class="parent">
+            <canvas id="gl-canvas" width="550" height="550" background-color="black" oncontextmenu="return false;">
+                Oops ... your browser doesn't support the HTML5 canvas element
+            </canvas>
+        </div>
+        <div class="copy">
+            <p class="tagline">
+                <input type="text" id="saveText" value="" size="30">
+                <br/>
+                <br/>
+                <button id="saveButton">Save</button>
+                <button id="loadButton">Load</button>
+                <button id="reset">Reset</button>
+                <br/>
+                <br/>
+                <input type="text" id="shuffleNum" value="10" size="5">
+                <button id="shuffle">Shuffle</button>
+            </p>
+        </div>
+    </div>
+	<div class = "buttonTitle">
+        <div class = "leftButton">
+            <input type = "button" value= "Back" class = "button" style = "font-size: 2em" onClick="location.href='index.html'"></button>
+       </div>
+        <div class = "rightButton">
+            <input type = "button" value = "Tutorial" class = "button" style = "font-size: 2em" onClick="location.href='tutorial.html'"></button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
