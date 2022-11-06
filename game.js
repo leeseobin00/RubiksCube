@@ -57,6 +57,10 @@ var new_y;
 var CANVAS_X_OFFSET;
 var CANVAS_Y_OFFSET;
 
+var time = 0;
+var min = 0;
+var sec = 0;
+
 window.onload = function init() {
     canvas = document.getElementById("gl-canvas");
     gl = WebGLUtils.setupWebGL(canvas, {preserveDrawingBuffer: true, premultipliedAlpha: false});
@@ -84,6 +88,9 @@ window.onload = function init() {
     vColor = gl.getAttribLocation(program, "vColor");
     gl.enableVertexAttribArray(vColor);
 
+	const Timer=document.getElementById('Timer');
+	Timer.value=min+":"+'00';
+	
     canvas.addEventListener("mousedown", startRotate);
     canvas.addEventListener("mouseup", stopRotate);
     canvas.addEventListener("mousemove", rotating);
@@ -110,8 +117,8 @@ window.onload = function init() {
     };
 
     render();
+	TIMER();
 };
-
 
 function render() {
     if (rubiksCube.queue.length !== 0 && !isFaceRotating) {
@@ -120,6 +127,17 @@ function render() {
     }
     requestAnimFrame(render);
     rubiksCube.draw(0);
+}
+
+function TIMER(){
+    PlAYTIME = setInterval(function(){
+        time = time + 1000;
+        min = time / (60*1000);
+
+        sec = (sec + 1) % 60;
+        Timer.value=Math.floor(min)+':'+sec;     
+   
+    },1000); 
 }
 
 class RubiksCube {
